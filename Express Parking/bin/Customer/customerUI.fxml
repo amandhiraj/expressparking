@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#customer_mouse_dragged" onMousePressed="#customer_mouse_pressed" prefHeight="315.0" prefWidth="450.0" style="-fx-background-color: #57606f;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Customer.CustomerMain">
+  <top>
+      <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #dfe4ea;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <SplitPane disable="true" dividerPositions="0.10596026490066225" onMouseDragged="#customer_mouse_dragged" prefHeight="26.0" prefWidth="381.0">
+               <items>
+                  <ImageView disable="true" fitHeight="29.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Pictures/male-placeholder-image.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="customer_lbl_name" contentDisplay="RIGHT" disable="true" prefHeight="27.0" prefWidth="270.0" text="Welcome, ">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </items>
+            </SplitPane>
+            <Button fx:id="customer_btn_logout" mnemonicParsing="false" onMouseClicked="#customer_btn_logout_pressed" prefHeight="34.0" prefWidth="164.0" stylesheets="@application.css" text="Logout">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIcon fill="#00c3ff" glyphName="MINUS" onMouseClicked="#customer_mouse_minus" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fill="#bf0000" glyphName="CLOSE" onMouseClicked="#customer_mouse_close" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <Pane prefHeight="312.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane fx:id="customer_tabpane" prefHeight="292.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Book Space">
+                  <content>
+                    <AnchorPane prefWidth="450.0">
+                           <children>
+                              <Label layoutX="41.0" layoutY="31.0" style="-fx-text-fill: white;" text="Paking Number" />
+                              <TextField fx:id="customer_tb_booktime" layoutX="41.0" layoutY="102.0" style="-fx-background-color: #717c8f;" />
+                              <Label layoutX="41.0" layoutY="85.0" style="-fx-text-fill: white;" text="Booking Time (Seconds, ex: 30)" />
+                              <TextField fx:id="customer_tb_plateNum" layoutX="41.0" layoutY="157.0" style="-fx-background-color: #717c8f;" />
+                              <Label layoutX="41.0" layoutY="140.0" style="-fx-text-fill: white;" text="License Plate" />
+                              <Button fx:id="customer_btn_bookspace" layoutX="242.0" layoutY="69.0" mnemonicParsing="false" onAction="#customerBookspace" prefHeight="68.0" prefWidth="167.0" text="Book Parking" />
+                              <Label fx:id="customer_lbl_status" layoutX="41.0" layoutY="199.0" textFill="WHITE" />
+                              <ComboBox fx:id="customer_cb_space" layoutX="42.0" layoutY="49.0" onMouseClicked="#LoadSpaces" prefWidth="150.0" promptText="Select parking" style="-fx-background-color: #717c8f;" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Cancellations">
+                  <content>
+                    <AnchorPane prefWidth="450.0">
+                           <children>
+                              <Button fx:id="customer_btn_t2_cancelbooking" layoutX="9.0" layoutY="137.0" mnemonicParsing="false" onAction="#customerCancelspace" prefHeight="80.0" prefWidth="429.0" text="Cancel Booking" />
+                              <ComboBox fx:id="customer_cb_t2_bookingID" layoutX="24.0" layoutY="48.0" onMouseClicked="#LoadBookings" prefHeight="27.0" prefWidth="403.0" promptText="Select Booking ID" style="-fx-background-color: #717c8f;" visibleRowCount="3" />
+                              <Label layoutX="24.0" layoutY="18.0" text="Booking ID" textFill="WHITE" wrapText="true" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab onSelectionChanged="#LoadUserBookings" text="View Bookings">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" onKeyPressed="#LoadUserBookings" prefHeight="0.0" prefWidth="450.0">
+                           <children>
+                              <ListView fx:id="customer_vb_list" layoutX="11.0" layoutY="10.0" prefHeight="140.0" prefWidth="338.0" style="-fx-background-color: #57606f;" />
+                              <Button fx:id="customer_pay" layoutX="11.0" layoutY="176.0" mnemonicParsing="false" onAction="#customerPay" prefHeight="41.0" prefWidth="429.0" text="Pay" />
+                              <CheckBox fx:id="payment_m_credit" layoutX="363.0" layoutY="24.0" mnemonicParsing="false" text="Credit" textFill="WHITE" wrapText="true" />
+                              <CheckBox fx:id="payment_m_paypal" layoutX="363.0" layoutY="56.0" mnemonicParsing="false" text="PayPal" textFill="WHITE" wrapText="true" />
+                              <CheckBox fx:id="payment_m_debit" layoutX="363.0" layoutY="89.0" mnemonicParsing="false" text="Debit" textFill="WHITE" wrapText="true" />
+                              <CheckBox fx:id="payment_m_stripe" layoutX="363.0" layoutY="126.0" mnemonicParsing="false" text="Stripe" textFill="WHITE" wrapText="true" />
+                              <Label fx:id="customer_lb_payment" layoutX="14.0" layoutY="152.0" text="." textFill="WHITE" wrapText="true" />
+                              <Label fx:id="customer_payment_total" layoutX="331.0" layoutY="150.0" text="Total : $0.00" wrapText="true">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color green="1.0" blue="0.6425992846488953" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.40229885057471254">
+                                             <color>
+                                                <Color green="1.0" blue="0.6425992846488953" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.15000000596046448" green="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></Pane>
+   </center>
+</BorderPane>

@@ -1,0 +1,6 @@
+firstname,lastname,uuid,email,password,permissions,loginstatus
+Song,Wang,123456,songwang@yorku.ca,admin,3,false
+Aman,Dhiraj,e429a5177fbd4ffb933093e9fdb7d058,amand25@my.yorku.ca,123,1,true
+Pan,Peter,81989e3e7c6b49d38b86990f6dcf39ba,pp@gmail.com,123,2,false
+Bob,Ross,e06c44358f7845d2a24b826829d70e72,bp@gmail.com,123,1,false
+Bob,Ross,21c766fc3c604f4e981237b5b5fdbfa2,test@gmail.com,123,1,false

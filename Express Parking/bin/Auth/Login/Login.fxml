@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="214.0" prefWidth="365.0" style="-fx-background-color: #57606f;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Auth.Login.LoginMain">
+   <center>
+      <Pane>
+         <children>
+            <Button fx:id="login_btn_register" layoutX="81.0" layoutY="96.0" mnemonicParsing="false" onAction="#openRegisterGUI" prefHeight="25.0" prefWidth="79.0" stylesheets="@application.css" text="Register" />
+            <TextField fx:id="login_txt_userEmail" layoutX="16.0" layoutY="24.0" prefHeight="25.0" prefWidth="142.0" promptText="Email" style="-fx-background-color: #717c8f;" stylesheets="@application.css" />
+            <PasswordField fx:id="login_txt_userPass" layoutX="16.0" layoutY="61.0" prefHeight="25.0" prefWidth="143.0" promptText="Password" style="-fx-background-color: #717c8f;" stylesheets="@application.css" />
+            <Button fx:id="login_btn_login" layoutX="15.0" layoutY="96.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="63.0" stylesheets="@application.css" text="Login" />
+            <Label fx:id="login_txt_lblStatus" layoutX="3.0" layoutY="126.0" prefHeight="51.0" prefWidth="178.0" textFill="#ff7675" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+   <top>
+     <HBox alignment="CENTER_RIGHT" onMouseDragged="#login_mouse_dragged" onMousePressed="#login_mouse_pressed" prefHeight="10.0" prefWidth="327.0" style="-fx-background-color: #dfe4ea;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <FontAwesomeIcon fill="#00c3ff" glyphName="MINUS" onMouseClicked="#login_mouse_minus" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fill="#bf0000" glyphName="CLOSE" onMouseClicked="#login_mouse_close" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <Pane prefHeight="178.0" prefWidth="183.0" style="-fx-background-color: #717c8f;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="134.0" fitWidth="142.0" layoutX="25.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../Pictures/parking_logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

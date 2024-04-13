@@ -1,0 +1,30 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.root {
+	-fx-text-fill: white;
+	-fx-background-fills: white
+}
+.text-field  {
+	-fx-text-fill: white;
+	-fx-background-fills: white
+}
+.button {
+    -fx-background-radius: 8.0;
+    -fx-background-color: #717c8f;
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: white;
+}
+.button:hover {
+    -fx-background-color: #dfe4ea;
+    -fx-text-fill: black;
+}
+.button:pressed {
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+.button Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}

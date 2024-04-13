@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#admin_mouse_dragged" onMousePressed="#admin_mouse_pressed" prefHeight="275.0" prefWidth="450.0" style="-fx-background-color: #57606f;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminMain">
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #dfe4ea;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <SplitPane disable="true" dividerPositions="0.10596026490066225" onMouseDragged="#admin_mouse_dragged" prefHeight="26.0" prefWidth="381.0">
+               <items>
+                  <ImageView disable="true" fitHeight="29.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Pictures/male-placeholder-image.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="admin_lbl_name" contentDisplay="RIGHT" disable="true" prefHeight="27.0" prefWidth="270.0" text="Welcome, ">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </items>
+            </SplitPane>
+            <Button fx:id="admin_btn_logout" mnemonicParsing="false" onMouseClicked="#admin_btn_logout_pressed" prefHeight="30.0" prefWidth="155.0" stylesheets="@application.css" text="Logout">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIcon fill="#00c3ff" glyphName="MINUS" onMouseClicked="#admin_mouse_minus" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fill="#bf0000" glyphName="CLOSE" onMouseClicked="#admin_mouse_close" size="1.3em" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </FontAwesomeIcon>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane prefHeight="240.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Manage PEO">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="450.0">
+                     <children>
+                        <TextField fx:id="admin_tb_fn" layoutX="14.0" layoutY="28.0" style="-fx-background-color: #717c8f;" />
+                        <TextField fx:id="admin_tb_ln" layoutX="14.0" layoutY="76.0" style="-fx-background-color: #717c8f;" />
+                        <PasswordField fx:id="admin_tb_password" layoutX="14.0" layoutY="123.0" style="-fx-background-color: #717c8f;" />
+                        <TextField fx:id="admin_tb_email" layoutX="14.0" layoutY="168.0" style="-fx-background-color: #717c8f;" />
+                        <Label layoutX="14.0" layoutY="11.0" text="First name" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="59.0" text="Last Name" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="106.0" text="Password" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="151.0" text="Email" textFill="WHITE" />
+                        <Button layoutX="204.0" layoutY="38.0" mnemonicParsing="false" onAction="#AdminAddPeo" prefHeight="61.0" prefWidth="221.0" text="Add PEO" />
+                        <Button layoutX="204.0" layoutY="110.0" mnemonicParsing="false" onAction="#AdminRemovePeo" prefHeight="62.0" prefWidth="222.0" text="Remove PEO" />
+                        <Label fx:id="admin_lb_status" layoutX="207.0" layoutY="178.0" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Change Payment Status">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="admin_tb2_fn1" layoutX="8.0" layoutY="27.0" style="-fx-background-color: #717c8f;" />
+                        <TextField fx:id="admin_tb2_ln1" layoutX="8.0" layoutY="72.0" style="-fx-background-color: #717c8f;" />
+                        <TextField fx:id="admin_tb2_email" layoutX="8.0" layoutY="117.0" style="-fx-background-color: #717c8f;" />
+                        <ComboBox fx:id="admin_cb_booking" layoutX="166.0" layoutY="24.0" onMouseClicked="#LoadBookings" prefWidth="150.0" promptText="Select ID" style="-fx-background-color: #717c8f;" />
+                        <Label layoutX="9.0" layoutY="6.0" text="First name" textFill="WHITE" />
+                        <Label layoutX="9.0" layoutY="52.0" text="Last Name" textFill="WHITE" />
+                        <Label layoutX="166.0" layoutY="6.0" text="Booking ID" textFill="WHITE" />
+                        <Label layoutX="8.0" layoutY="100.0" text="Email" textFill="WHITE" />
+                        <Button layoutX="355.0" layoutY="8.0" mnemonicParsing="false" onAction="#AdminPayUser" prefHeight="187.0" prefWidth="89.0" text="PAY" />
+                        <Label fx:id="admin_lb_statusPay" layoutX="8.0" layoutY="160.0" prefHeight="30.0" prefWidth="335.0" textFill="WHITE" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
