@@ -16,7 +16,7 @@ The Parking System Application is a software solution developed to address the n
 - 
 ## UML Diagram
 
-[UML Diagram](https://github.com/amandhiraj/expressparking/blob/main/UML.png?raw=true)
+![UML Diagram](https://github.com/amandhiraj/expressparking/blob/main/UML.png?raw=true)
 
 ## Technologies Used
 
