@@ -13,6 +13,10 @@ The Parking System Application is a software solution developed to address the n
 - Parking Booking: Customers can book parking spaces for specified durations.
 - Payment Processing: Secure payment processing for booked parking spaces.
 - Space Management: Parking enforcement officers can manage parking spaces, add or remove them as needed.
+- 
+## UML Diagram
+
+[UML Diagram](https://github.com/amandhiraj/expressparking/blob/main/UML.png?raw=true)
 
 ## Technologies Used
 
