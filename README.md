@@ -1,6 +1,6 @@
 # Parking System Application
 
-This repository contains a Java-based parking system application designed and developed by Amanpreet Dhiraj.
+This repository contains a Java-based parking system application designed and developed by Aman Dhiraj.
 
 ## Overview
 
